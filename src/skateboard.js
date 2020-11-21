@@ -47,7 +47,7 @@ function Map() {
 
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 
-function City(props) {
+function Skateboard(props) {
 
   return (
     <div style={{width:"100vw", height:"100vh"}} >
@@ -59,6 +59,6 @@ function City(props) {
     </div>
   );
 }
-export default City;
+export default Skateboard;
 
 // http://opentable.herokuapp.com/api/cities  
