@@ -2,13 +2,15 @@ import React, { useState, useEffect} from "react";
 import axios from "axios";
 import {GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow} from "react-google-maps";
 import * as parksData from './assets/skateboard.json'
+import mapStyle from './mapStyle'
 
 function Map() {
   const [selectedPark, setSelectedPark] = useState(null)
   return(
     <GoogleMap 
     defaultCenter={{lat:45.421532, lng:-75.697189}} 
-    defaultZoom={10}>
+    defaultZoom={10}
+    defaultOptions={{styles:mapStyle}}>
 
       {parksData.features.map(park =>(
       <Marker  
@@ -21,7 +23,7 @@ function Map() {
         setSelectedPark(park);
       }}
       icon={{
-        url:"https://upload.wikimedia.org/wikipedia/commons/3/37/Skateboarding_pictogram.svg", scaledSize: new window.google.maps.Size(25, 25)
+        url:"/skateboard.svg", scaledSize: new window.google.maps.Size(25, 25)
       }}
       />
       ))}
