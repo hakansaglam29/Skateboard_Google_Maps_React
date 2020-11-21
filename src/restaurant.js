@@ -20,6 +20,9 @@ function Map() {
       onClick={()=>{
         setSelectedPark(park);
       }}
+      icon={{
+        url:"https://upload.wikimedia.org/wikipedia/commons/3/37/Skateboarding_pictogram.svg", scaledSize: new window.google.maps.Size(25, 25)
+      }}
       />
       ))}
       
@@ -30,7 +33,10 @@ function Map() {
           }}
           onCloseClick={()=>setSelectedPark(null)}
         >
-          <div>park detail</div>
+          <div>
+            <h2>{selectedPark.properties.NAME}</h2>
+            <p>{selectedPark.properties.DESCRIPTIO}</p>
+          </div>
         </InfoWindow>
       )}
     </GoogleMap>
